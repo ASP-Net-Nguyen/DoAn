@@ -1,0 +1,116 @@
+﻿@model DoAn.ViewModels.TravelCreateVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TravelModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input hidden asp-for="TravelModel.Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TravelModel.NameTravel" class="control-label"></label>
+                <input asp-for="TravelModel.NameTravel" class="form-control" />
+                <span asp-validation-for="TravelModel.NameTravel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.AuthorTravel" class="control-label"></label>
+                <input asp-for="TravelModel.AuthorTravel" class="form-control" />
+                <span asp-validation-for="TravelModel.AuthorTravel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.Infomation" class="control-label"></label>
+                <input asp-for="TravelModel.Infomation" class="form-control" />
+                <span asp-validation-for="TravelModel.Infomation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.Infomation1" class="control-label"></label>
+                <input asp-for="TravelModel.Infomation1" class="form-control" />
+                <span asp-validation-for="TravelModel.Infomation1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.Infomation2" class="control-label"></label>
+                <input asp-for="TravelModel.Infomation2" class="form-control" />
+                <span asp-validation-for="TravelModel.Infomation2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.DisplayTravel" class="control-label"></label>
+                <input asp-for="TravelModel.DisplayTravel" class="form-control" />
+                <span asp-validation-for="TravelModel.DisplayTravel" class="text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <div class="col-4">
+                    Image
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files" value="" class="form-control" id="uploadBox" />
+                </div>
+                <div class="col-4">
+                    <img src="/images/@Model.TravelModel.ImageUrl" width="100%" style="boder-radius: 10px; border: 1px solid #ff6a00" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-4">
+                    Image
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files1" value="" class="form-control" id="uploadBox1" />
+                </div>
+                <div class="col-4">
+                    <img src="/images/@Model.TravelModel.ImageUrl1" width="100%" style="boder-radius: 10px; border: 1px solid #ff6a00" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-4">
+                    Image
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files2" value="" class="form-control" id="uploadBox2" />
+                </div>
+                <div class="col-4">
+                    <img src="/images/@Model.TravelModel.ImageUrl2" width="100%" style="boder-radius: 10px; border: 1px solid #ff6a00" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-4">
+                    Image
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files3" value="" class="form-control" id="uploadBox3" />
+                </div>
+                <div class="col-4">
+                    <img src="/images/@Model.TravelModel.ImageUrl3" width="100%" style="boder-radius: 10px; border: 1px solid #ff6a00" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-4">
+                    Image
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files4" value="" class="form-control" id="uploadBox4" />
+                </div>
+                <div class="col-4">
+                    <img src="/images/@Model.TravelModel.ImageUrl4" width="100%" style="boder-radius: 10px; border: 1px solid #ff6a00" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="TravelModel.StatusId" class="control-label"></label>
+                <select asp-for="TravelModel.StatusId" class="form-control" asp-items="@Model.StatusSelectList"></select>
+                <span asp-validation-for="TravelModel.StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

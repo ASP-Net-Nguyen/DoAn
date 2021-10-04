@@ -1,0 +1,101 @@
+﻿@model IEnumerable<DoAn.Models.TravelModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameTravel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorTravel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infomation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infomation1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infomation2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayTravel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameTravel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorTravel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Infomation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Infomation1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Infomation2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayTravel)
+            </td>
+            <td>
+                <img src="/images/@item.ImageUrl" width="50" />
+            </td>
+            <td>
+                <img src="/images/@item.ImageUrl1" width="50" />
+            </td>
+            <td>
+                <img src="/images/@item.ImageUrl2" width="50" />
+            </td>
+            <td>
+                <img src="/images/@item.ImageUrl3" width="50" />
+            </td>
+            <td>
+                <img src="/images/@item.ImageUrl4" width="50" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Statuss)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
