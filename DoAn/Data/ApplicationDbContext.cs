@@ -17,29 +17,11 @@ namespace DoAn.Data
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<TravelTag> TravelTags { get; set; }
-
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>().ToTable("Users");
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<TravelTag>().HasKey(protag => new { protag.TravelModelId, protag.TagId });
-
-            //Seeder data tag
-            modelBuilder.Entity<Tag>().HasData(new Tag
-            {
-                Id = 1,
-                Name = "Rẻ"
-            });
-            modelBuilder.Entity<Tag>().HasData(new Tag
-            {
-                Id = 2,
-                Name = "Ngon"
-            });
-            modelBuilder.Entity<Tag>().HasData(new Tag
-            {
-                Id = 3,
-                Name = "Bổ Khỏe"
-            });
         }
     }
 }
